@@ -3,6 +3,9 @@ const app = express();
 
 app.get('/', (req, res) => { 
     var nombre = req.query.nombre;
+    if (!nombre){
+        nombre = "desconocido";
+    }
     res.send(`<h1>Hola ${nombre}!</h1>`);
 });
 
