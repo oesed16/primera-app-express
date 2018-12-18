@@ -8,6 +8,8 @@ const app = express();
 //     }
 //     res.send(`<h1>Hola ${nombre}!</h1>`);
 // });
+//================= Pares e Impares ==============
+// === Mi Solución ===
 
 const NUMBER_LINES = 50;
 
@@ -22,6 +24,22 @@ app.get('/', (req, res) => {
     }
     res.send(lines);
 });
+
+// ===== Solución recomendada =====
+// app.set('view engine', 'pug');
+// app.set('views', 'views');
+
+// app.get("/", (req, res) => {
+//   const texts = [];
+//   for (let i=1; i <=50; i++) {
+//     texts.push(`${i} Soy ${(i % 2 == 0 ? "Par" : "Impar")}!`);
+//   }
+
+//   res.render("index", { texts: texts });
+// });
+
+// app.listen(3000);
+// ================================================
 
 app.get('/makers/:nombre', (req, res) => {
     var nombre = req.params.nombre;
