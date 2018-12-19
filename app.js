@@ -6,7 +6,7 @@ var useragent = require('express-useragent');
 
 app.use(useragent.express());
 app.get('/', function(req, res){
-    res.send(req.useragent);
+    res.send(req.useragent.browser);
 });
 
 // =============================
