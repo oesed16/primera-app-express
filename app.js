@@ -1,6 +1,16 @@
 const express = require('express');
 const app = express();
 
+// ========== Reto Encabezados ================
+var useragent = require('express-useragent');
+
+app.use(useragent.express());
+app.get('/', function(req, res){
+    res.send(req.useragent);
+});
+
+// =============================
+
 // app.get('/', (req, res) => { 
 //     var nombre = req.query.nombre;
 //     if (!nombre){
@@ -8,7 +18,8 @@ const app = express();
 //     }
 //     res.send(`<h1>Hola ${nombre}!</h1>`);
 // });
-//================= Pares e Impares ==============
+
+//================= Pares e Impares =============================================================
 // === Mi Solución ===
 
 const NUMBER_LINES = 50;
@@ -39,7 +50,7 @@ app.get('/', (req, res) => {
 // });
 
 // app.listen(3000);
-// ================================================
+// =========================================================================================
 
 app.get('/makers/:nombre', (req, res) => {
     var nombre = req.params.nombre;

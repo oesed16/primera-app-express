@@ -9,7 +9,8 @@
   "author": "oesed16",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "express-useragent": "^1.0.12"
   },
   "devDependencies": {
     "pug": "^2.0.3"
