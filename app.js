@@ -6,7 +6,7 @@ var useragent = require('express-useragent');
 
 app.use(useragent.express());
 app.get('/', function(req, res){
-    res.send(req.useragent.browser);
+    res.send(req.headers['user-agent']);
 });
 
 // =============================
@@ -22,19 +22,19 @@ app.get('/', function(req, res){
 //================= Pares e Impares =============================================================
 // === Mi Solución ===
 
-const NUMBER_LINES = 50;
+// const NUMBER_LINES = 50;
 
-app.get('/', (req, res) => {
-    var lines = "";
-    for (n = 0; n < NUMBER_LINES; n++) {
-        if ((n + 1) % 2 === 0) {
-            lines = lines + `<p>${n + 1} Soy Par!</p>`;
-        } else {
-            lines = lines + `<p>${n + 1} Soy Impar!</p>`;
-        }
-    }
-    res.send(lines);
-});
+// app.get('/', (req, res) => {
+//     var lines = "";
+//     for (n = 0; n < NUMBER_LINES; n++) {
+//         if ((n + 1) % 2 === 0) {
+//             lines = lines + `<p>${n + 1} Soy Par!</p>`;
+//         } else {
+//             lines = lines + `<p>${n + 1} Soy Impar!</p>`;
+//         }
+//     }
+//     res.send(lines);
+// });
 
 // ===== Solución recomendada =====
 // app.set('view engine', 'pug');
